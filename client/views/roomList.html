@@ -1,0 +1,12 @@
+<template name="Roomlist">
+	{{> nav}} <br/> 
+	<div>
+		<ul>
+			{{#each classes}}
+				{{#if subscribed}}	
+					<li><span class="class">{{name}}</span></li>
+				{{/if}}		
+			{{/each}}
+		</ul>
+	</div>
+</template>

@@ -1,0 +1,10 @@
+<template name="chatters">
+	<div id="chatters">
+		{{classname}}<br>
+		{{#each chatters}}
+			{{#if online}}
+				<span class="chattername">{{picture}}{{name}}</span><br>
+			{{/if}}
+		{{/each}}
+	</div>
+</template>

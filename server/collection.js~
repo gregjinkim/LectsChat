@@ -1,0 +1,30 @@
+messages = new Meteor.Collection('messages');
+classes = new Meteor.Collection('classes');
+subscriptions = new Meteor.Collection('subscriptions');
+
+Meteor.publish("messages", function() {
+	return messages.find({});
+});
+
+Meteor.publish("classes", function(className) {
+	return messages.find({className: className});
+});
+
+Meteor.publish("subscriptions", function(userid) {
+	return subscriptions.find({subscriber: userid});
+});
+
+Meteor.publish("users", function() {
+	return users.find({}, { fields: {
+		'status.online': 1
+}});
+
+Meteor.publish("facebookinfo", function() {
+	return Meteor.users.find({_id: this.userId}, {fields: {
+		'services.facebook.id': 1,
+		'services.facebook.name': 1,
+		'services.facebook.gender': 1,
+		'services.facebook.picture': 1,
+		'services.facebook.picture.data': 1,
+		'services.facebook.picture.data.url': 1
+}});

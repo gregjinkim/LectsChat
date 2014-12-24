@@ -1,0 +1,23 @@
+<template name="Classlist">
+	{{> nav}} <br/> 
+	<div>
+		<ul>
+			{{#each classes}}
+					<li><span class="class">{{name}}</span></li>
+			{{/each}}
+		</ul>
+		{{> newClass}}
+	</div>
+</template>	
+
+<template name="newClass">
+	<form id="send">
+		Course Abbreviation: <input id="courseabbrev" type="text" size="14" maxlength="5" placeholder="eg. CSE, LSJ"/><br>
+		Course Number: <input id="coursenumber" type="text" size="11" maxlength="3" placeholder="eg. 142, 311"/><br>
+		Lecture Start Time: <input id="hourstart" type="text" size="2" maxlength="2"> : <input id="minutestart" type="text" size="2" maxlength="2"><input id="amstart" type="radio" name="start" value="am" checked="checked" /> am
+<input id="pmstart" type="radio" name="start" value="pm" /> pm<br>
+		Lecture End Time: <input id="hourend" type="text" size="2" maxlength="2"> : <input id="minuteend" type="text" size="2" maxlength="2"><input id="amend" type="radio" name="end" value="am" checked="checked" /> am
+<input id="pmend" type="radio" name="end" value="pm" /> pm<br>
+	    <input type="submit" value="Submit"/>
+	</form>
+</template>

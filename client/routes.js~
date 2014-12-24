@@ -1,0 +1,10 @@
+Router.route('/', function () {
+  this.render('Index');
+});
+
+
+Router.route('/classlist');
+
+Router.route('/roomlist');
+
+Router.route('/Room');
